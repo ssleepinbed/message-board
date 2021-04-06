@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.box{
+    width: 700px;
+    height: 225px;
+    background-color: rgba(0, 0, 0, 0.699);
+    margin: auto;
+    margin-top: 25px;
+    border-radius: 7px;
+    padding-left: 50px;
+    padding-top:10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.233);
+}
+
+.boxtitle {
+    text-align: left;
+    font-family: 'Courier New', 'courier', 'monospace';
+    margin: auto;
+    color:azure;
+}
+
+.boxauthor {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    margin: auto;
+    color: azure;
+}
+
+.boxcontent {
+    font-family: 'Poppins', sans-serif;
+    color:white;
+    font-size: 13px;
+    width: 600px;
+    height: 100px;
+    transition: 0.5s;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.boxcontent:hover {
+    background-color:rgba(105, 105, 105, 0.479);
+    opacity: 1;
+}
+
+.menu {
+    margin: auto;
+    width: max;
+    height: 50px;
+    background-color: rgba(14, 7, 5, 0.616);
+    text-align: end;
+    padding-top: 5px;
+}
+
+.menutext{
+    margin:0;
+    padding-right:25px;
+    padding-top:0px;
+    margin-top: -8px;
+}
+
+.menutext ul {
+    padding-bottom: auto;
+    margin-bottom: auto;
+    font-size: 25px;
+}
+
+.menutext ul li {
+    line-height: 50px;
+    list-style: none;
+    display: inline-block;
+    float: right;
+    
+}
+
+.menutext ul li a {
+    text-decoration: none;
+    color: azure;
+    padding: 0 20px;
+    display: block;
+    transition: 0.5s;
+}
+
+.menutext ul li a:hover {
+    opacity: 1;
+    border-bottom: solid rgb(255, 255, 255) 1px;
+    background-color:rgba(0, 0, 0, 0.699);
+
+}
+
+a.profilelink {
+    font-size: 25px;
+    margin: auto;
+    padding: auto;
+    margin-right: 10px;
+}
+
+a, a:hover, a:visited, a:active {
+    color: inherit;
+    text-decoration: none;
+   }
+
+.content-section {
+    background: #1a1a1aa8;
+    padding: 10px 20px;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    margin-bottom: 20px;
+  }
+
+.form-control-label {
+    color:white;
+}
+
+.border-bottom {
+    color:white;
+}
+
+.alertmessage {
+    background-color:rgba(94, 72, 190, 0.712);
+    font-family: Arial, Helvetica, sans-serif;
+    width:500px;
+    height:50px;
+    padding-top: 10px;
+    padding-left:10px;
+    margin:auto;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    border-left: 5px solid rgb(255, 48, 48);
+    border-radius: 7px;
+    animation: alertmessageanim;
+    animation-duration: 0.5s;
+}
+
+.alertlist h4 {
+    color: white;
+}
+
+@keyframes alertmessageanim {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.alertlist {
+    line-height: 50px;
+}
+
+.profilebox {
+    width: 800px;
+    height: 600px;
+    background-color: rgba(0, 0, 0, 0.815);
+    margin: auto;
+    margin-top:5%;
+    align-items: center;
+}
+
+.profileimage {
+    max-width: 100px;
+    height: 100px; 
+    margin-top:0px !important;
+    margin-left: 100px;
+    border: 10px azure;
+    border-radius: 100px;
+}
+
+.profileboxname {
+    color: azure;
+}
+
+.profile-content-section {
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+
+.button {
+    display: block;
+    margin: 50px;
+    margin-left: 300px;
+    background-color: #4cacaf2a;
+    border: 2px solid #4caf86;
+    padding: 10px 30px;
+    border-radius: 5px;
+    color: white;
+}

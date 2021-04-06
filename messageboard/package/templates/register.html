@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section" style="width:50%;margin-top:100px;margin-left:auto;margin-right:auto;margin-bottom:auto;border-bottom: 0px;">
+        <form method="POST" action="">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">
+                    Register
+                </legend>
+                <!--For some weird reason, CSRF will not work here. I do not know why. Fix this!-->
+                <div class="form-group">
+                    {{ form.username.label(class="form-control-label")}}
+                    {% if form.username.errors %}
+                        {% for error in form.username.errors %}
+                            <span>{{ error }}  </span>
+                        {% endfor %}
+                    {% endif %}
+                    {{ form.username(class="form-control form-control-lg") }}
+                </div>
+                <div class="form-group">
+                    {{ form.password.label(class="form-control-label")}}
+                    {% if form.password.errors %}
+                        {% for error in form.password.errors %}
+                            <span>{{ error }}  </span>
+                        {% endfor %}
+                    {% endif %}
+                    {{ form.password(class="form-control form-control-lg") }}
+                </div>
+                <div class="form-group">
+                    {{ form.confirmpassword.label(class="form-control-label")}}
+                    {% if form.confirmpassword.errors %}
+                        {% for error in form.confirmpassword.errors %}
+                            <span>{{ error }}  </span>
+                        {% endfor %}
+                    {% endif %}
+                    {{ form.confirmpassword(class="form-control form-control-lg") }}
+                </div>
+            </fieldset>
+            <div class="form-group" style="padding-top: 15px;">
+                {{ form.submit(class_="btn btn-outline-info")}}
+            </div>
+        </form>
+    </div>
+        <small class="text-muted">
+            <a href="{{ url_for('login') }}" class="ml-2"></a>
+        </small>
+{% endblock %}

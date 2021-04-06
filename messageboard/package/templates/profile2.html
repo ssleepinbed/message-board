@@ -1,0 +1,29 @@
+{% block content %}
+<div class="profilebox">
+    <div class="media">
+      <img class="rounded-circle account-img" src="{{ url_for('static',filename='userimages/{{ User.profile_image }}') }}" style="margin-top: 50px;margin-left: 335px;width:100px;height:100px;">
+      <div class="media-body" style="margin-left: 300px;margin-top:20px;">
+        <h2 class="profileboxname" style="text-align: center;margin-left: -350px;"> {{ current_user.username }} </h2>
+        <p class="text-secondary" style="margin-left: -69px;">Make changes to your profile on this page.</p>
+      </div>
+    </div>
+    <div class="profile-content-section">
+      <form method="POST" action="">
+        {{ form.csrf_token }}
+          <fieldset class="form-group">
+              <div class="form-group" style="width:300px;margin-left: 210px;">
+                  {{ form.username.label(class="form-control-label")}}
+                  {{ form.username(class_="form-control form-control-lg") }}
+              </div>
+              <div class="form-group" style="width:300px;margin-left: 210px;">
+                  {{ form.password.label(class="form-control-label")}}
+                  {{ form.password(class_="form-control form-control-lg") }}
+              </div>
+          </fieldset>
+          <div class="form-group-button" style="margin: 0 auto; display: inline-block;">
+              {{ form.submit(class_="button")}}
+          </div>
+      </form>
+  </div>
+</div>
+{% endblock %}

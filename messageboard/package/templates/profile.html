@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="profilebox">
+    <div class="media">
+      <img id="profilepictureupload" class="rounded-circle account-img" src="{{ pfp }}" style="margin-top: 50px;margin-left: 335px;width:100px;height:100px;">
+      <form action="" method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <input type="file" id="profilepictureupload1" style="display:none;" name="profileimage">
+        <button type="submit" id="button1" style="display:none;"></button>
+      </form>
+      
+      <script type="text/javascript">
+          window.onload = function() {
+            var fileupload = document.getElementById("profilepictureupload1");
+            var image = document.getElementById("profilepictureupload");
+            image.onclick = function () {
+              fileupload.click();
+            };
+            fileupload.onchange = function () {
+              var button = document.getElementById("button1");
+              button.click();
+            };
+          };
+      </script>
+      <div class="media-body" style="margin-left: 300px;margin-top:20px;">
+        <h2 class="profileboxname" style="text-align: center;margin-left: -350px;"> {{ pfp }} </h2>
+        <p class="text-secondary" style="margin-left: -69px;">Make changes to your profile on this page.</p>
+      </div>
+    </div>
+    <div class="profile-content-section">
+      <form method="POST" action="">
+        {{ form.csrf_token }}
+          <fieldset class="form-group">
+              <div class="form-group" style="width:300px;margin-left: 210px;">
+                  {{ form.username.label(class="form-control-label")}}
+                  {% if form.username.errors %}
+                        {% for error in form.username.errors %}
+                            <span>{{ error }}  </span>
+                        {% endfor %}
+                    {% endif %}
+                    {{ form.username(class="form-control form-control-lg") }}
+              </div>
+              <div class="form-group" style="width:300px;margin-left: 210px;">
+                {{ form.password.label(class="form-control-label")}}
+                {% if form.password.errors %}
+                      {% for error in form.password.errors %}
+                          <span>{{ error }}  </span>
+                      {% endfor %}
+                  {% endif %}
+                  {{ form.password(class="form-control form-control-lg") }}
+              </div>
+          </fieldset>
+          <div class="form-group-button" style="margin: 0 auto; display: inline-block;">
+              {{ form.submit(class_="button")}}
+          </div>
+      </form>
+  </div>
+</div>
+{% endblock %}
